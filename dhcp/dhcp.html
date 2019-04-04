@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2019-03-28T09:24:24.176869059"/>
+	<meta name="changed" content="2019-04-04T09:23:13.849073955"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115% }
+	</style>
+</head>
+<body lang="es-ES" dir="ltr">
+<ol>
+	<li/>
+<p style="margin-bottom: 0cm"><a name="yui_3_17_2_1_1553761659348_38"></a>
+	<b>Instala y configura el servidor udhcpd para que de IPs en el
+	rango de 10 a 100 </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm"><img src="dhcp_html_4bccb8a0b33575d0.png" name="Imagen1" align="left" width="643" height="106" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal">Para instalar el
+udhcpd ponemos sudo apt-get install udhcpd.</p>
+<p style="margin-bottom: 0cm; font-weight: normal">Para configurar
+los rangos vamos al fichero <i>etc</i><span style="font-style: normal">/dnsmasq.conf
+y ponemos dhcp-range=172.16.0.10,</span><span style="font-style: normal">172.16.0.100,255.255.255.0,24h
+así tiene que quedar esa línea, </span><span style="font-style: normal">el
+24 h quiere decir que esa IP dure ese tiempo.</span></p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<ol start="2">
+	<li/>
+<p style="margin-bottom: 0cm"><b>Configura para que los
+	servidores DNS sean los de Google. </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><img src="dhcp_html_874bd61a755ab92d.png" name="Imagen2" align="left" width="643" height="146" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal">Vamos al fichero
+sudo nano  etc/resolv.conf y ponemos ahí nameserver 8.8.8.8 que son
+los servidores de google y guardamos.</p>
+<p style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<ol start="3">
+	<li/>
+<p style="margin-bottom: 0cm"><b>Configura para que dos
+	clientes obtengan siempre las direcciones 10 y 100 respectivamente. </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><img src="dhcp_html_d35d6983cc3acdbe.png" name="Imagen3" align="left" width="643" height="169" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal">Vamos al documento
+<i>etc/dnsmasq.conf </i><span style="font-style: normal">y ponemos </span>
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; font-weight: normal">
+dhcp-host=11:22:33:44:55:66,192.168.18.10,infinite este  quiere decir
+que le asignaremos la IP 192.168.18.10 al pc cuya dirección mac es 
+11:22:33:44:55:66 y con el otro host igual.</p>
+<p style="margin-bottom: 0cm; font-weight: normal"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<ol start="4">
+	<li/>
+<p style="margin-bottom: 0cm"><b>Configura el servidor para
+	que la puerta de enlaces sea la IP de la interfaz inalámbrica de la
+	raspberry pi. </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm"><img src="dhcp_html_eb43259c58121d58.png" name="Imagen5" align="left" width="556" height="121" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal">Lo que hago es en
+el fichero <i>etc</i><span style="font-style: normal">/dhcpcd.conf
+donde pone 192.168.18.3 que eso es la puerta de enlace pongo ahí la
+IP de mi raspberry, la cual seria 192.168.18.209</span></p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<ol start="5">
+	<li/>
+<p style="margin-bottom: 0cm"><b>Configura el servidor para
+	que el tiempo de concesión sea un 1 día. </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm"><img src="dhcp_html_4bccb8a0b33575d0.png" name="Imagen4" align="left" width="643" height="106" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal">De esto se hace
+cargo la 2 parte de el dhcp-range en el fichero /etc/dnsmasq.conf
+donde pone 24h quiere decir que el tiempo de concesión es 24h.</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<ol start="6">
+	<li/>
+<p><b>Lanza el wireshark en la raspberry pi, e interpreta
+	todas las señales originadas en el tráfico DHCP. </b>
+	</p>
+</ol>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+No me funciona wireshark en raspberry, me da errores.</p>
+</body>
+</html>

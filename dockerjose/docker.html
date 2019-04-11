@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2019-04-08T09:31:15.123206164"/>
+	<meta name="changed" content="2019-04-11T09:38:48.294843763"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115% }
+		h4.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h4.ctl { font-family: "Lohit Devanagari" }
+		h3.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h3.ctl { font-family: "Lohit Devanagari" }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h2.ctl { font-family: "Lohit Devanagari" }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="es-ES" dir="ltr">
+<h4 class="western" align="center"><a name="yui_3_17_2_1_1554709587668_24"></a>
+<em><font size="4" style="font-size: 15pt"><u>Tema 4: DNS</u></font></em></h4>
+<h3 class="western" align="left"><em><font size="3" style="font-size: 13pt"><u>Instalación
+de docker</u></font></em></h3>
+<p align="left"><img src="docker_html_e1a10211dd45443d.png" name="Imagen1" align="left" width="643" height="425" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left"><em><font size="3" style="font-size: 13pt"><span style="font-style: normal"><span style="text-decoration: none">Para
+instalar docker ponemos en la terminal sudo apt install docker.io
+docker-compose, y pasará a instalarse.</span></span></font></em></p>
+<h3 class="western" align="left"><br/>
+<br/>
+
+</h3>
+<h3 class="western" align="left" style="page-break-before: always"><a name="yui_3_17_2_1_1554709663374_42"></a>
+<em><font size="3" style="font-size: 13pt"><span style="font-style: normal"><u>Instalación
+del contenedor</u></span></font></em></h3>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p align="left"><img src="docker_html_67d08717e7734642.png" name="Imagen2" align="left" width="415" height="141" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%">Creamos
+la carpeta donde se va a guardar la configuración, después de
+crearla accederemos a ella.</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><img src="docker_html_6e04278f4a3a4775.png" name="Imagen3" align="left" width="643" height="424" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><a name="yui_3_17_2_1_1554709663374_44"></a><a name="yui_3_17_2_1_1554709663374_43"></a>
+Luego ponemos el comando  git clone
+<a href="https://github.com/pstauffer/docker-bind/">https://github.com/pstauffer/docker-bind/</a>
+una vez puesto este comando accederemos cd docker-bind y una vez
+dentro de ese directorio pondremos                    docker-compose
+-f docker-compose.yml up -d</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><img src="docker_html_9cc5469ec70882cf.png" name="Imagen4" align="left" width="586" height="284" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%">Al
+hacer el comando docker-compose -f docker-compose.yml up <span style="text-decoration: none">
+saldrá un error por que el puerto 53 ya está ocupado entonces, lo
+que hacemos es ir al fichero docker-compose.yml y donde pone 53:53
+ponemos </span><span style="text-decoration: none">84</span><span style="text-decoration: none">:</span><span style="text-decoration: none">84
+</span><span style="text-decoration: none">y ya funcionará  </span>
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><img src="docker_html_24ead6985f3bbf2b.png" name="Imagen5" align="left" width="643" height="367" border="0"/>
+<span style="text-decoration: none">Luego
+ponemos docker start bind para iniciarlo, para ver si funciona
+ponemos docker ps y luego para ver errores ponemos el comando </span>docker
+exec -i -t [CONTAINER_ID] /bin/cat /var/log/named/general.log 
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%">Donde
+pone container_id es el numero señalado en la imagen.</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; page-break-before: always">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%"><img src="docker_html_34b483e349962f85.png" name="Imagen6" align="left" width="643" height="236" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+Luego ponemos el comando docker exec -i -t 686d62e2bd7c <span style="font-weight: normal">
+</span><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">bin/sh</span></span></span><span style="font-style: normal"><span style="text-decoration: none"><b>
+ </b></span></span><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">para
+ejecutar un terminal dentro del contenedor  686d62e2bd7c es la ID de
+mi contenedor.</span></span></span></p>
+<h2 class="western" align="left" style="text-decoration: none"><a name="yui_3_17_2_1_1554964318023_38"></a>
+<span style="font-style: normal"><span style="text-decoration: none"><b>Configuramos
+el demonio named</b></span></span></h2>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<img src="docker_html_85a0f0845167ff9a.png" name="Imagen7" align="left" width="643" height="498" border="0"/>
+<span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">Nos
+vamos al fichero de configuración named.conf y ahí ponemos lo
+siguiente para configurarlo con el instituto, donde pone forwarders
+ponemos 192.168.16.3 que es la red de cisco y en zone ponemos
+smr.iesvirgerdelcarmen.com y en file donde pone </span></span></span><i><span style="text-decoration: none"><span style="font-weight: normal">etc/bind/example…</span></span></i><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">
+ponemos etc/bind/smr.iesvirgendelcarmen.com.zone </span></span></span><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">y
+guardamos </span></span></span>
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<img src="docker_html_6f07002c99617e85.png" name="Imagen8" align="left" width="643" height="463" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">A</span></span></span><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">hora
+como arriba hemos indicado que la zone es
+smr.iesvirgendelcarmen.com.zone pues ponemos</span></span></span></p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">nano
+smr.iesvirgendelcarmen.com.zone y ahi dentro ponemos la configuración
+de la imagen.</span></span></span></p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<font size="4" style="font-size: 16pt"><span style="font-style: normal"><span style="text-decoration: none"><b>Probamos
+la configuración</b></span></span></font></p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<img src="docker_html_c031adff13ea2cc6.png" name="Imagen9" align="left" width="643" height="137" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; line-height: 100%; text-decoration: none">
+<span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">P</span></span></span><span style="font-style: normal"><span style="text-decoration: none"><span style="font-weight: normal">ara
+ver si la configuración está bien lo que hacemos es docker stop
+bind y luego ponemos docker-compose -f docker-compose.yml  up -d</span></span></span></p>
+</body>
+</html>

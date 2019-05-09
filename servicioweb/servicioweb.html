@@ -1,0 +1,586 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2019-04-29T10:09:30.502953393"/>
+	<meta name="changed" content="2019-05-09T09:05:16.390268719"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115% }
+		h3.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h3.ctl { font-family: "Lohit Devanagari" }
+		h5.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h5.ctl { font-family: "Lohit Devanagari" }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="es-ES" dir="ltr">
+<h3 class="western"><a name="yui_3_17_2_1_1556524642421_50"></a>Apache</h3>
+<h5 class="western"><a name="yui_3_17_2_1_1556524642421_51"></a>Creamos
+el contenedor</h5>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="servicioweb_html_629b5a9efbb3bae4.png" name="Imagen1" align="left" width="643" height="225" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Descargamos estos
+dos archivos en la pagina <a href="https://hub.docker.com/_/ubuntu">https://hub.docker.com/_/ubuntu</a></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="servicioweb_html_351c24fed9cd5c5d.png" name="Imagen2" align="left" width="643" height="348" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Luego en la terminal
+ejecutamos el comando:  docker build -t ubuntumiimagen . 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="servicioweb_html_794938aa3f7b138.png" name="Imagen3" align="left" width="643" height="43" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Luego ejecutamos el
+comando docker image ls para ver que se ha creado la imagen.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="servicioweb_html_83a226d123936e28.png" name="Imagen4" align="left" width="643" height="41" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Luego ejecutamos el
+comando docker run -dit  --name mi-running-ubuntu2 ubuntumiimagen</p>
+<p style="margin-bottom: 0cm; line-height: 100%; page-break-before: always">
+<img src="servicioweb_html_404e6bc4866806e0.png" name="Imagen5" align="left" width="643" height="299" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Con docker image ls
+vemos la imagen creada, la mia es ubuntumiimagen y con docker
+container ls es para ver el contenedor creado que se llama
+mi-running-ubuntu2.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="servicioweb_html_b89bd16bcc91ef5d.png" name="Imagen6" align="left" width="643" height="116" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Para acceder como
+root ponemos docker exec -ti [Nombre contenedor] <i>bin</i><span style="font-style: normal">/bash</span></p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_1087af00c65500e8.png" name="Imagen7" align="left" width="643" height="484" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Una
+vez estamos en root lo que hacemos es poner apt update para instalar
+actualizaciones, y luego una vez hecho eso ponemos apt install
+apache2 que es para instalar el apache</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%; page-break-before: always">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_6ae08753f2028fd9.png" name="Imagen8" align="left" width="643" height="381" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Luego
+instalamos el net-tools para las IP y vemos que tenemos la ip
+172.17.0.3</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_88a2377d1f3af391.png" name="Imagen9" align="left" width="643" height="347" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">En
+el navegador de interenet ponemos la IP que nos ha dado con el
+ifconfig en nuestro root y lo ponemos en el navegador y sale lo que
+se muestra en la imagen</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%; page-break-before: always">
+<img src="servicioweb_html_1245a29ca0c1703e.png" name="Imagen10" align="left" width="643" height="232" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Vamos
+al archivo index.html y ponemos esto dentro:</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_fc59aefa3bdd56d1.png" name="Imagen11" align="left" width="519" height="227" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_cffbe6bbd6501254.png" name="Imagen12" align="left" width="643" height="202" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Y
+se verá así 
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_ed5ad798832de1bc.png" name="Imagen13" align="left" width="643" height="190" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span style="font-style: normal">Luego
+vamos al fichero </span><i>etc</i><span style="font-style: normal">/hosts
+y ponemos 172.17.0.3 		<a href="http://www.smr.com/">www.smr.com</a></span></p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_196b5b692773200d.png" name="Imagen14" align="left" width="643" height="305" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Luego
+en el normal ponemos el mismo dichero y ponemos lo mismo.</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="servicioweb_html_746d175925cec0ba.png" name="Imagen15" align="left" width="643" height="184" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%">Y
+aquí se vé como funciona.</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; line-height: 100%; page-break-before: always">
+<font size="4" style="font-size: 16pt"><b>VIRTUAL HOST</b></font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; line-height: 100%">
+<img src="servicioweb_html_6e72c347e89be7d4.png" name="Imagen16" align="left" width="643" height="316" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">En el ordenador anfitrión lo
+que hacemos es ir al fichero etc/hosts y ahí añadimos 172.17.0.3
+<a href="http://www.smr.lan/">www.smr.lan</a> y 172.17.0.3
+<a href="http://www.iesvdc.lan/">www.iesvdc.lan</a> </font>
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_2d9f4f946cb002b5.png" name="Imagen17" align="left" width="643" height="444" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a apache2 luego a
+sites-available y luego a 000-default.conf y en ese fichero de
+configuracion donde pone server name ponemos <a href="http://www.smr.lan/">www.smr.lan</a>
+y en ServerAdmin <a href="mailto:webmaster@smr.lan">webmaster@smr.lan</a></font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_38774a2869b717f9.png" name="Imagen18" align="left" width="643" height="192" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Aquí se ve como funciona.</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_9aac0285ef4b0d08.png" name="Imagen19" align="left" width="643" height="143" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego lo que hacemos es
+ejecutar el comando cp 000-default.conf 001-default.conf para copiar
+otro archivo para configurar el otro link</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_e84b690754c232a6.png" name="Imagen20" align="left" width="643" height="209" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Así tiene que quedar para que
+funcione y guardamos</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_2b47c53290dec3e6.png" name="Imagen21" align="left" width="643" height="148" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Aqui se ve como tambíén
+funciona.</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_5e45ca8a33f3216e.png" name="Imagen22" align="left" width="643" height="251" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego nos vamos a index.html
+de nuevo y ponemos el h2 bienvenidos a smr.lan y guardamos</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_6b7ffb3297cf5088.png" name="Imagen23" align="left" width="643" height="156" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego para configurar la otra
+pagina web con algo diferente lo que hacemos es crear una carpeta
+para la otra pagina y copiamos el index.html en esa carpeta y
+accedemos</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_12b462050dcc0bc6.png" name="Imagen24" align="left" width="643" height="288" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a sites-available 
+y hacemos a2ensite y hacemos lo de la imagen e paramos apache y lo
+iniciamos</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_40744c10da4d8d0c.png" name="Imagen25" align="left" width="562" height="225" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Aqui se ve como funciona esta </font>
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_e20249a7b971f215.png" name="Imagen26" align="left" width="624" height="219" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Aquí se ve como funciona la
+otra también</font></p>
+<h5 class="western" align="left" style="font-style: normal; page-break-before: always">
+<font size="4" style="font-size: 16pt"><b>Autenticación básica y
+digest</b></font></h5>
+<p align="left" style="font-style: normal"><br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal"><img src="servicioweb_html_655bcf43f4023753.png" name="Imagen27" align="left" width="643" height="286" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><font size="4" style="font-size: 14pt">Al
+hacer nmap a smr.lan tiene que salir el puerto 80 en el caso que no
+salga en root tenemos que poner apache2ctl start para que funcione</font></p>
+<p align="left" style="font-style: normal; font-weight: normal"><br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><img src="servicioweb_html_8116f2a276402981.png" name="Imagen28" align="left" width="643" height="244" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a
+<i>etc/apache2/mods-enabled </i>y ahí ponemos a2enmod y luego
+ponemos a2enmod auth_digest y luego reiniciamos el servicio</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_13530818f8ba101f.png" name="Imagen29" align="left" width="643" height="294" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a var/www y ahi
+creamos el usuario poniendo lo que pone en la imagen y de contraseña
+e puesto usuario</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_d4c58e4d9ad78965.png" name="Imagen30" align="left" width="643" height="174" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Para que me salga la carpeta
+password lo que hacemos es utilizar el comando htpasswd -cb
+./password usuario1 usuario1</font></p>
+<h5 class="western" align="left" style="font-style: normal; page-break-before: always">
+<font size="4" style="font-size: 14pt"><b>Creación de los
+certificados y activación de SSL</b></font></h5>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_b5c1108cd459998.png" name="Imagen31" align="left" width="643" height="752" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Vamos a
+<i>etc/apache2/mods-available  </i>ahi hacemos el comando a2enmod ssl
+una vez hecho ese comando hacemos apache2ctl restart para reiniciar
+apache y se guarde bien la configuración  una vez hecho esto vamos a
+la terminal normal, y hacemos un nmap a <a href="http://www.smr.lan/">www.smr.lan</a>
+para ver si esta el https abierto y ahí se vé que si.</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%; page-break-before: always">
+<img src="servicioweb_html_d19d1fa635292af4.png" name="Imagen32" align="left" width="643" height="244" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">En apache2 creamos una carpeta
+llamada ssl con mkdir ssl, luego accedemos a la carpeta y ponemos el
+comando openssl genrsa -out iesvdc.lan.key 4096 y generamos una clave
+privada</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_9190be73ceac1e7b.png" name="Imagen33" align="left" width="643" height="398" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego ponemos el comando
+openssl req -new -key iesvdc.lan.key -out iesvdc.lan.csr</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Y luego vamos rellenando los
+espacios que nos piden con lo que pone en la imagen </font>
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_ad71637fa5b3039f.png" name="Imagen34" align="left" width="643" height="62" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego ponemos el comando
+openssl x509 -req -days 500 -in iesvdc.lan.csr -signkey
+iesvdc.lan.key -out iesvdc.lan.crt y se crea el certificado</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%; page-break-before: always">
+<img src="servicioweb_html_fa9a6bde9984e356.png" name="Imagen35" align="left" width="643" height="505" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a iesvdc.lan.crt y
+copiamos eso y lo copiamos en un fichero.</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%; page-break-before: always">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_6613a942e45e4380.png" name="Imagen36" align="left" width="643" height="365" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego vamos a sites-available
+y vamos a default-ssl.conf y ahi en serveradmin, server name,
+documentroot y en sslcertificatefile y sslcertificatekeyfile ponemos
+lo de la imagen</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_d95e8ae023e0baee.png" name="Imagen37" align="left" width="643" height="186" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego en sites-available
+hacemos a2ensite y ponemos * luego reiniciamos apache</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_3f20255e1a62e20.png" name="Imagen38" align="left" width="643" height="461" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_83b7cd93a3c15593.png" name="Imagen39" align="left" width="643" height="272" border="0"/>
+<font size="4" style="font-size: 14pt">luego
+en preferencias vamos a certificados y ahi vamos a autoridades y le
+damos a importar y ponemos el certificado hecho antes</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Y ahí se ve como funciona</font></p>
+<h3 class="western" align="left" style="font-style: normal; page-break-before: always">
+<font size="4" style="font-size: 16pt"><b>Filtrado Web</b></font></h3>
+<p align="left" style="font-style: normal; font-weight: normal"><img src="servicioweb_html_d92d07d238cfef05.png" name="Imagen40" align="left" width="643" height="351" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><font size="4" style="font-size: 14pt">Primero,
+lo que hacemos es actualizar y instalar squid para ello utilizamos el
+comando apt update &amp;&amp; apt install squid</font></p>
+<p align="left" style="font-style: normal; font-weight: normal"><br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><img src="servicioweb_html_1f5bc16c905a3457.png" name="Imagen41" align="left" width="608" height="128" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><font size="4" style="font-size: 14pt">Luego
+accedemos a <i>etc</i>/squid </font>
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><font size="4" style="font-size: 14pt">Luego
+utilizaremos el comando cp para hacer una copia del fichero de
+configuracion, usando el comando cp squid.conf squid.conf.backup</font></p>
+<p align="left" style="font-style: normal; font-weight: normal"><br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal; page-break-before: always">
+<br/>
+<br/>
+
+</p>
+<p align="left" style="font-style: normal; font-weight: normal"><img src="servicioweb_html_b7b7bd0428e36400.png" name="Imagen42" align="left" width="643" height="83" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego utilizamos el comando
+cat squid.conf.backup | grep -v ^# &gt; squid.conf1, después
+utilizamos el comando awk ‘nf’ squid.conf1 &gt; squid.conf</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_edd6371c458fc4dc.png" name="Imagen43" align="left" width="417" height="89" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">En el fichero de configuración
+de squid.conf tenemos que añadir lo de la imagen</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego iniciamos squid poniendo
+el comando <i>etc</i>/init.d/squid start  </font>
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_5802dcfa11bedaa0.png" name="Imagen44" align="left" width="643" height="237" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Luego en la configuración en
+firefox, en proxy ponemos configuración manual y ponemos la ip de
+root de docker y ponemos usar el mismo docker para todo y aceptamos</font></p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<img src="servicioweb_html_63ecca82d256a253.png" name="Imagen45" align="left" width="643" height="266" border="0"/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">como se vé funciona el
+internet, y para comprobar que no funciona apagamos squid y docker.</font></p>
+</body>
+</html>

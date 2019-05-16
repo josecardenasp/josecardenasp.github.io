@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2019-05-13T09:30:57.585703154"/>
+	<meta name="changed" content="2019-05-16T08:45:59.206438500"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115% }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h2.ctl { font-family: "Lohit Devanagari" }
+		pre.cjk { font-family: "DejaVu Sans Mono", monospace }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="es-ES" dir="ltr">
+<h2 class="western" align="center">Instalación</h2>
+<p style="margin-bottom: 0cm; line-height: 100%"><img src="correoelectronico_html_59dda034ac361534.png" name="Imagen1" align="left" width="643" height="163" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Primero lo que
+hacemos es un contenedor llamado appl_email2 le pongo el 2 por que ya
+tenia uno llamado appl_email y ejecutamos el comando docker run -dit
+–name appl_email2 ubuntu</p>
+<p style="margin-bottom: 0cm; line-height: 100%">luego ejecutamos el
+comando docker exec -ti appl_email2 <i>bin</i><span style="font-style: normal">/bash
+para iniciar el contenedor</span></p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="correoelectronico_html_8d0e0efe5097b856.png" name="Imagen2" align="left" width="643" height="245" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span style="font-style: normal">Luego
+miramos ifconfig para ver que ip tenemos y vamos al fichero hosts y
+ponemos 172.17.0.3 smtp.smr.lan y 172.17.0.3 pop.smr.lan </span><span style="font-style: normal">y
+en el anfitrión igua</span><span style="font-style: normal">l, es
+decir, en nuestra terminal normal sin iniciar ningún contenedor.</span></p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><img src="correoelectronico_html_760ce7b51f6e2aa5.png" name="Imagen3" align="left" width="643" height="427" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span style="font-style: normal">L</span><span style="font-style: normal">uego
+instalamos postfix y una vez instalamos postfix en </span><span style="font-style: normal">General
+type of mail configuration</span></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><span style="font-style: normal">ponemos
+un 2 y luego en </span><span style="font-style: normal">System mail
+name </span><span style="font-style: normal">ponemos  smr.lan</span></p>
+<p style="margin-bottom: 0cm; font-style: normal; line-height: 100%"><br/>
+
+</p>
+<pre class="western" style="font-style: normal"><img src="correoelectronico_html_62f1cbfcb4fef08c.png" name="Imagen4" align="left" width="643" height="430" border="0"/>
+
+<img src="correoelectronico_html_62f1cbfcb4fef08c.png" name="Imagen5" align="left" width="643" height="430" border="0"/>
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal">L</span><span style="font-style: normal">uego instalamos mail-stack-delivery</span></font></font>
+
+<img src="correoelectronico_html_a7969ebbe9c87e73.png" name="Imagen6" align="left" width="643" height="327" border="0"/>
+
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Luego lo que hacemos es crear un usuario llamado fulano con adduser y luego iniciamos postfix y dovecot poniendo <i>etc</i>/init.d/postfix start y <i>etc/init.d/dovecot start</i></font></font>
+<img src="correoelectronico_html_e65f99e6ecd1f1f9.png" name="Imagen7" align="left" width="643" height="227" border="0"/>
+
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Luego comprobamos que están abiertos los puertos y lo que hacemos es poner nmap <a href="http://www.smr.lan/">www.smr.lan</a> para comprobar que están abiertos</font></font>
+
+<img src="correoelectronico_html_376097929ca62e29.png" name="Imagen8" align="left" width="643" height="434" border="0"/>
+
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Luego configuramos la cuenta y ya está</font></font></pre>
+</body>
+</html>
